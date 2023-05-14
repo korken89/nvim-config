@@ -8,7 +8,7 @@ lsp.ensure_installed({
   'dockerls',
   'lua_ls',
   'tsserver',
-  'rust_analyzer',
+  'rust_analyzer'
 })
 
 -- Fix Undefined global 'vim'
@@ -56,10 +56,27 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
+lsp.skip_server_setup({'rust_analyzer'})
+
 lsp.setup()
 
 vim.diagnostic.config({
     virtual_text = true
+})
+
+-- Rust tools
+
+local rt = require("rust-tools")
+
+rt.setup({
+  server = {
+    on_attach = function(_, bufnr)
+      -- Hover actions
+      vim.keymap.set("n", "K", rt.hover_actions.hover_actions, { buffer = bufnr })
+      -- Code action groups
+      vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+    end,
+  },
 })
 
 
