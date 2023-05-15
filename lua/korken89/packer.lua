@@ -21,19 +21,19 @@ return require('packer').startup(function(use)
 	  end
   })
 
-  use({
-      "folke/trouble.nvim",
-      config = function()
-          require("trouble").setup {
-              icons = true,
-              -- your configuration comes here
-              -- or leave it empty to use the default settings
-              -- refer to the configuration section below
-          }
-      end
-  })
+  -- use({
+  --     "folke/trouble.nvim",
+  --     config = function()
+  --         require("trouble").setup {
+  --             -- icons = true,
+  --             -- your configuration comes here
+  --             -- or leave it empty to use the default settings
+  --             -- refer to the configuration section below
+  --         }
+  --     end
+  -- })
 
-  use({'nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'}})
+  use('nvim-treesitter/nvim-treesitter', {run = ':TSUpdate'})
 
   use 'ThePrimeagen/harpoon'
   use 'mbbill/undotree'
@@ -61,4 +61,13 @@ return require('packer').startup(function(use)
   }
 
   use 'simrat39/rust-tools.nvim'
+
+  use {
+    -- integrate with lualine
+    'nvim-lualine/lualine.nvim',
+  }
+  use {
+      'linrongbin16/lsp-progress.nvim',
+      requires = { 'nvim-tree/nvim-web-devicons' },
+  }
 end)
