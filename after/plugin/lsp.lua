@@ -36,20 +36,20 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
     ["<S-Tab>"] = cmp.mapping(cmp.mapping.select_prev_item(), { "i", "s" }),
 })
 
-cmp.setup({
-    sources = {
-        {
-            name = 'spell',
-            option = {
-                keep_all_entries = false,
-                enable_in_context = function()
-                    return true
-                end,
-            },
-        },
-    },
-    { name = 'path' }
-})
+-- cmp.setup({
+--     sources = {
+--         -- {
+--         --     name = 'spell',
+--         --     option = {
+--         --         keep_all_entries = false,
+--         --         enable_in_context = function()
+--         --             return true
+--         --         end,
+--         --     },
+--         -- },
+--         { name = 'path' }
+--     },
+-- })
 
 -- cmp_mappings['<Tab>'] = nil
 -- cmp_mappings['<S-Tab>'] = nil
@@ -84,7 +84,7 @@ lsp.on_attach(function(_, bufnr)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
--- lsp.skip_server_setup({'rust_analyzer'})
+--lsp.skip_server_setup({'rust_analyzer'})
 
 lsp.setup()
 
@@ -106,19 +106,19 @@ end
 
 -- Rust tools
 
-local rt = require("rust-tools")
+--local rt = require("rust-tools")
 
-rt.setup({
-    -- server = {
-    --   on_attach = function(_, bufnr)
-    --     -- local opts = {buffer = bufnr, remap = false}
+--rt.setup({
+-- server = {
+--   on_attach = function(_, bufnr)
+--     -- local opts = {buffer = bufnr, remap = false}
 
-    --     -- -- Hover actions
-    --     -- vim.keymap.set("n", "K", rt.hover_actions.hover_actions, opts)
-    --     -- -- Code action groups
-    --     -- vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, opts)
+--     -- -- Hover actions
+--     -- vim.keymap.set("n", "K", rt.hover_actions.hover_actions, opts)
+--     -- -- Code action groups
+--     -- vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, opts)
 
-    --     -- vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
-    --   end,
-    -- },
-})
+--     -- vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
+--   end,
+-- },
+--})

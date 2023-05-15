@@ -18,6 +18,8 @@ return require('packer').startup(function(use)
         as = 'darkplus',
         config = function()
             vim.cmd('colorscheme darkplus')
+            vim.cmd([[highlight LspInlayHint guifg=#d8d8d8 guibg=#2a2a2a]])
+            vim.cmd([[highlight Comment guifg=#6A9955]])
         end
     })
 
@@ -34,6 +36,7 @@ return require('packer').startup(function(use)
     -- })
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
+    use('nvim-treesitter/playground')
 
     use 'ThePrimeagen/harpoon'
     use 'mbbill/undotree'
@@ -63,8 +66,6 @@ return require('packer').startup(function(use)
         }
     }
 
-    use 'simrat39/rust-tools.nvim'
-
     use {
         -- integrate with lualine
         'nvim-lualine/lualine.nvim',
@@ -73,4 +74,6 @@ return require('packer').startup(function(use)
         'linrongbin16/lsp-progress.nvim',
         requires = { 'nvim-tree/nvim-web-devicons' },
     }
+
+    use 'lvimuser/lsp-inlayhints.nvim'
 end)
