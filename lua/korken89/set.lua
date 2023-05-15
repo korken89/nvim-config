@@ -30,12 +30,18 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "100"
 
+vim.opt.spelllang = 'en_us'
+vim.opt.spell = true
+
 -- Remove trailing whitespace
+-- Format on save
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
     pattern = {"*"},
     callback = function(_)
         local save_cursor = vim.fn.getpos(".")
         vim.cmd([[%s/\s\+$//e]])
         vim.fn.setpos(".", save_cursor)
+        vim.lsp.buf.format()
     end,
 })
+
