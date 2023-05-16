@@ -33,6 +33,8 @@ vim.opt.colorcolumn = "100"
 vim.opt.spelllang = 'en_us'
 vim.opt.spell = true
 
+vim.opt.exrc = true
+
 -- Remove trailing whitespace
 -- Format on save
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {

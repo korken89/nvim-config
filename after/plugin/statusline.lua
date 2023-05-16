@@ -1,10 +1,11 @@
 require("lualine").setup({
-   sections = {
-     lualine_c = {
-       -- invoke `progress` here.
-       require("lsp-progress").progress,
-     },
-  }
+    sections = {
+        lualine_c = {
+            -- invoke `progress` here.
+            require("lsp-progress").progress,
+        },
+        lualine_x = { { 'filename', path = 1 } },
+    }
 })
 
 -- refresh lualine
