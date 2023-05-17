@@ -76,5 +76,5 @@ return require('packer').startup(function(use)
     }
 
     use 'lvimuser/lsp-inlayhints.nvim'
-    use 'tamago324/nlsp-settings.nvim'
+    use 'korken89/nlsp-settings.nvim'
 end)
