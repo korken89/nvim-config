@@ -14,26 +14,14 @@ return require('packer').startup(function(use)
     }
 
     use({
-        'LunarVim/darkplus.nvim',
+        'korken89/darkplus.nvim',
         as = 'darkplus',
         config = function()
             vim.cmd('colorscheme darkplus')
-            vim.cmd([[highlight LspInlayHint guifg=#d8d8d8 guibg=#2a2a2a]])
-            vim.cmd([[highlight Comment guifg=#6A9955]])
+            -- vim.cmd([[highlight LspInlayHint guifg=#d8d8d8 guibg=#2a2a2a]])
+            -- vim.cmd([[highlight Comment guifg=#6A9955]])
         end
     })
-
-    -- use({
-    --     "folke/trouble.nvim",
-    --     config = function()
-    --         require("trouble").setup {
-    --             -- icons = true,
-    --             -- your configuration comes here
-    --             -- or leave it empty to use the default settings
-    --             -- refer to the configuration section below
-    --         }
-    --     end
-    -- })
 
     use('nvim-treesitter/nvim-treesitter', { run = ':TSUpdate' })
     use('nvim-treesitter/playground')
@@ -76,5 +64,5 @@ return require('packer').startup(function(use)
     }
 
     use 'lvimuser/lsp-inlayhints.nvim'
-    use 'korken89/nlsp-settings.nvim'
+    use 'korken89/nlsp-settings.nvim' -- Trying to fix the plugin...
 end)
