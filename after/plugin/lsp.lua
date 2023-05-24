@@ -84,29 +84,7 @@ lsp.on_attach(function(_, bufnr)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
---lsp.skip_server_setup({'rust_analyzer'})
-
 lsp.setup()
-
--- local nvim_lsp = require('lspconfig')
---
--- local on_attach = function(client)
---     require 'completion'.on_attach(client)
--- end
---
--- nvim_lsp.rust_analyzer.setup({
---     on_attach = on_attach,
---     settings = {
---         ["rust-analyzer"] = {
---             checkOnSave = {
---                 allTargets = false,
---                 --                extraArgs = { "--bins" },
---             },
---         }
---     }
--- })
-
-
 
 vim.diagnostic.config({
     virtual_text = true
@@ -148,7 +126,7 @@ require('lspconfig').rust_analyzer.setup({
         ["rust-analyzer"] = {
             checkOnSave = {
                 allTargets = false,
-                --                extraArgs = { "--bins" },
+                -- extraArgs = { "--bins" },
             },
         }
     }
