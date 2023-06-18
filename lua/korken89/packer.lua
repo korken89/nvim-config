@@ -64,6 +64,6 @@ return require('packer').startup(function(use)
     }
 
     use 'lvimuser/lsp-inlayhints.nvim'
-    use 'korken89/nlsp-settings.nvim' -- Trying to fix the plugin...
+    use { 'korken89/nlsp-settings.nvim', branch = 'fix2' } -- Trying to fix the plugin...
     use 'saecki/crates.nvim'
 end)
