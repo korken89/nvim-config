@@ -37,6 +37,8 @@ vim.opt.exrc = true
 
 vim.opt.mouse = ""
 
+vim.wo.wrap = true
+
 -- Remove trailing whitespace
 -- Format on save
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
