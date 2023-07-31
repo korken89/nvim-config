@@ -102,24 +102,6 @@ for _, sign in ipairs(diagnostic_signs) do
     vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = sign.name })
 end
 
--- Rust tools
-
---local rt = require("rust-tools")
-
---rt.setup({
--- server = {
---   on_attach = function(_, bufnr)
---     -- local opts = {buffer = bufnr, remap = false}
-
---     -- -- Hover actions
---     -- vim.keymap.set("n", "K", rt.hover_actions.hover_actions, opts)
---     -- -- Code action groups
---     -- vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, opts)
-
---     -- vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
---   end,
--- },
---})
 
 require("nlspsettings").setup({
     local_settings_dir = ".nvim",
